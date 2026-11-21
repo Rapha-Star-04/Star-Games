@@ -414,3 +414,37 @@ body.Default {
         text-align: center;
     }
 }
+
+
+/* AJUSTES FINAIS PARA CELULARES */
+@media screen and (max-width: 900px) {
+
+    /* Logo maior */
+    #Star_logo {
+        width: 300px;
+        height: 250px;
+    }
+
+    /* Linha vermelha maior */
+    #LinhaR {
+        width: 98%;
+        height: 7px;
+    }
+
+    /* Imagens dos jogos menores */
+    #Titulo1,
+    #Titulo2 {
+        width: 230px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Nomes mais próximos das imagens */
+    #Texto1,
+    #Texto2 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+}
+
