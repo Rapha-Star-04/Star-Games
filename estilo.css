@@ -1,4 +1,5 @@
 
+
 /* =====================================
    FONTE PERSONALIZADA
 ===================================== */
@@ -53,7 +54,7 @@
 .tPrincipal {
     position: absolute;
     left: 450px;
-    top: 20px;
+    top: -1px;
     color: rgb(255, 208, 0);
     font-size: 30px;
     font-family: "Pixel-Operator", monospace;
@@ -82,7 +83,7 @@
 
 #Texto1 {
     position: absolute;
-    top: 105px;
+    top: 125px;
     left: 14px;
     color: white;
     font-family: "Pixel-Operator", monospace;
@@ -93,7 +94,7 @@
 
 #Texto2 {
     position: absolute;
-    top: 165px;
+    top: 185px;
     left: 14px;
     color: white;
     font-family: "Pixel-Operator", monospace;
@@ -178,7 +179,6 @@ body.Default {
     max-width: 900px;
     margin: 55px auto 35px;
     padding: 0 15px;
-
     color: black;
     font-family: "Pixel-Operator", monospace;
     font-size: 16px;
@@ -287,50 +287,91 @@ body.Default {
 
 @media (max-width: 600px) {
 
-    /* Página inicial */
+    /* PÁGINA INICIAL */
 
     #FundoP {
-        min-width: 600px;
+        min-width: 0;
+        width: 100%;
+        min-height: 100vh;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "principal"
+            "imagem1"
+            "texto1"
+            "imagem2"
+            "texto2";
+
+        justify-items: center;
+        align-content: start;
+        gap: 15px;
+        padding: 15px 10px 35px;
     }
 
     #Star_logo {
-        width: 120px;
-        height: 220px;
-        top: -70px;
+        position: relative;
+        grid-area: logo;
+        width: 110px;
+        height: 130px;
+        top: 0;
         left: 0;
+        object-fit: contain;
     }
 
+    #LinhaR,
     #LinhaD {
         display: none;
     }
 
-    #Titulo1 {
-        width: auto;
-        height: auto;
-        top: 125px;
-        left: 305px;
+    .tPrincipal {
+        position: relative;
+        grid-area: principal;
+        left: auto;
+        top: auto;
+        margin: 0 0 15px;
+        font-size: 24px;
+        text-align: center;
     }
 
+    #FundoP > a:nth-of-type(1) {
+        grid-area: imagem1;
+    }
+
+    #FundoP > a:nth-of-type(2) {
+        grid-area: imagem2;
+    }
+
+    #FundoP > a:nth-of-type(3) {
+        grid-area: texto1;
+    }
+
+    #FundoP > a:nth-of-type(4) {
+        grid-area: texto2;
+    }
+
+    #Titulo1,
     #Titulo2 {
-        width: auto;
+        position: static;
+        display: block;
+        width: min(85vw, 300px);
         height: auto;
-        top: 125px;
-        left: 555px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
-    #Texto1 {
-        top: 125px;
-        left: 14px;
-        font-size: 18px;
-    }
-
+    #Texto1,
     #Texto2 {
-        top: 185px;
-        left: 14px;
+        position: static;
+        display: block;
+        margin: 0 auto 15px;
         font-size: 18px;
+        text-align: center;
+        color: white;
     }
 
-    /* Cabeçalho dos jogos */
+    /* CABEÇALHOS DOS JOGOS */
 
     .Default header {
         height: 155px;
@@ -354,7 +395,7 @@ body.Default {
         top: 150px;
     }
 
-    /* Textos */
+    /* TEXTOS */
 
     #TextoP {
         width: 94%;
@@ -385,7 +426,7 @@ body.Default {
         margin-left: 12px;
     }
 
-    /* Block Level */
+    /* BLOCK LEVEL */
 
     .Skins {
         width: 55px;
@@ -400,7 +441,7 @@ body.Default {
         margin: 20px auto 30px;
     }
 
-    /* Switch Block */
+    /* SWITCH BLOCK */
 
     .Skins2 {
         width: 100px;
