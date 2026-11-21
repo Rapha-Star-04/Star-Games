@@ -1,17 +1,32 @@
 
-
-/* =====================================
+/* =========================================
    FONTE PERSONALIZADA
-===================================== */
+========================================= */
 
 @font-face {
     font-family: "Pixel-Operator";
     src: url("Fontes/PixelOperator8-Bold.ttf") format("truetype");
 }
 
-/* =====================================
-   PÁGINA INICIAL
-===================================== */
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================================
+   PÁGINA INICIAL - NOTEBOOK
+========================================= */
 
 #FundoP {
     background-color: black;
@@ -22,6 +37,8 @@
     font-family: "Pixel-Operator", monospace;
 }
 
+/* LOGO */
+
 #Star_logo {
     position: absolute;
     width: 120px;
@@ -30,6 +47,8 @@
     top: -70px;
     left: 0;
 }
+
+/* LINHAS VERMELHAS */
 
 #LinhaR {
     position: absolute;
@@ -51,6 +70,8 @@
     border: 2.5px solid rgb(201, 0, 0);
 }
 
+/* TÍTULO PRINCIPAL */
+
 .tPrincipal {
     position: absolute;
     left: 450px;
@@ -61,6 +82,8 @@
     -webkit-text-stroke: 1.5px rgb(255, 174, 0);
     margin: 0;
 }
+
+/* IMAGENS DOS JOGOS */
 
 #Titulo1 {
     position: absolute;
@@ -80,6 +103,8 @@
     top: 125px;
     left: 555px;
 }
+
+/* NOMES DOS JOGOS */
 
 #Texto1 {
     position: absolute;
@@ -103,13 +128,9 @@
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-}
-
-/* =====================================
+/* =========================================
    PÁGINAS DOS JOGOS
-===================================== */
+========================================= */
 
 body.Default {
     background-color: white;
@@ -120,17 +141,9 @@ body.Default {
     overflow-x: hidden;
 }
 
-.Default * {
-    box-sizing: border-box;
-}
-
-.Default img {
-    max-width: 100%;
-}
-
-/* =====================================
-   CABEÇALHOS DOS JOGOS
-===================================== */
+/* =========================================
+   CABEÇALHOS
+========================================= */
 
 .Default header {
     position: relative;
@@ -169,9 +182,9 @@ body.Default {
     margin: 0;
 }
 
-/* =====================================
+/* =========================================
    TEXTOS DOS JOGOS
-===================================== */
+========================================= */
 
 #TextoP {
     position: relative;
@@ -179,6 +192,7 @@ body.Default {
     max-width: 900px;
     margin: 55px auto 35px;
     padding: 0 15px;
+
     color: black;
     font-family: "Pixel-Operator", monospace;
     font-size: 16px;
@@ -215,17 +229,17 @@ body.Default {
     margin-bottom: 8px;
 }
 
-/* =====================================
+/* =========================================
    RECUOS
-===================================== */
+========================================= */
 
 .Recuo {
     margin-left: 25px;
 }
 
-/* =====================================
+/* =========================================
    BLOCK LEVEL - SKINS
-===================================== */
+========================================= */
 
 .Skins {
     display: block;
@@ -235,9 +249,9 @@ body.Default {
     margin: 25px 0 35px 40px;
 }
 
-/* =====================================
+/* =========================================
    BLOCK LEVEL - TÍTULOS ESPECIAIS
-===================================== */
+========================================= */
 
 .Titulos {
     display: block;
@@ -248,9 +262,9 @@ body.Default {
     margin: 25px 0 35px 40px;
 }
 
-/* =====================================
+/* =========================================
    SWITCH BLOCK - SKINS
-===================================== */
+========================================= */
 
 .Skins2 {
     display: inline-block;
@@ -261,13 +275,14 @@ body.Default {
     vertical-align: middle;
 }
 
-/* =====================================
-   RESPONSIVIDADE - TABLETS
-===================================== */
+/* =========================================
+   TABLETS
+========================================= */
 
-@media (max-width: 900px) {
+@media screen and (min-width: 601px) and (max-width: 900px) {
 
     #TextoP {
+        width: 94%;
         max-width: 750px;
     }
 
@@ -281,131 +296,149 @@ body.Default {
     }
 }
 
+/* =========================================
+   CELULARES - PÁGINA INICIAL
+========================================= */
 
-/* =====================================
-   RESPONSIVIDADE - CELULARES
-===================================== */
-
-@media (max-width: 600px) {
-
-    /* PÁGINA INICIAL */
+@media screen and (max-width: 600px) {
 
     #FundoP {
-        min-width: 0;
+        position: relative;
         width: 100%;
+        min-width: 0;
         min-height: 100vh;
 
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "logo"
-            "principal"
-            "imagem1"
-            "texto1"
-            "imagem2"
-            "texto2";
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        justify-items: center;
-        align-content: start;
-        gap: 12px;
-        padding: 15px 10px 35px;
+        padding: 15px 12px 40px;
+        gap: 0;
     }
+
+    /* LOGO */
 
     #Star_logo {
         position: relative;
-        grid-area: logo;
-        width: 150px;
-        height: 160px;
-        top: 0;
-        left: 0;
+        top: auto;
+        left: auto;
+
+        width: 125px;
+        height: 135px;
+
         object-fit: contain;
+        margin-bottom: 15px;
     }
+
+    /* LINHAS */
 
     #LinhaR,
     #LinhaD {
         display: none;
     }
 
-    .tPrincipal {
+    /* TÍTULO PRINCIPAL */
+
+    #FundoP > h2 {
         position: relative;
-        grid-area: principal;
         left: auto;
         top: auto;
-        margin: 0 0 15px;
-        font-size: clamp(13px, 4.5vw, 19px);
+
+        width: 100%;
+        margin: 0 0 25px;
+
+        font-family: "Pixel-Operator", monospace;
+        font-size: clamp(16px, 5vw, 21px);
+
         text-align: center;
-        white-space: nowrap;
+        white-space: normal;
     }
 
-    #FundoP > a:nth-of-type(1) {
-        grid-area: imagem1;
+    /* LINKS E IMAGENS */
+
+    #FundoP > a {
+        position: static;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
+    #FundoP > a:nth-of-type(1),
     #FundoP > a:nth-of-type(2) {
-        grid-area: imagem2;
-    }
-
-    #FundoP > a:nth-of-type(3) {
-        grid-area: texto1;
-    }
-
-    #FundoP > a:nth-of-type(4) {
-        grid-area: texto2;
+        width: 100%;
     }
 
     #Titulo1,
     #Titulo2 {
         position: static;
         display: block;
-        width: min(65vw, 280px);
+
+        width: 78%;
+        max-width: 330px;
         height: auto;
-        max-width: 100%;
+
         margin: 0 auto;
     }
+
+    /* NOMES DOS JOGOS */
 
     #Texto1,
     #Texto2 {
         position: static;
         display: block;
-        margin: 0 auto 15px;
-        font-size: 17px;
-        text-align: center;
-        color: white;
-    }
 
-    /* CABEÇALHOS DOS JOGOS */
+        width: 100%;
+        margin: 12px auto 35px;
+
+        color: white;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   CELULARES - PÁGINAS DOS JOGOS
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* CABEÇALHOS */
 
     .Default header {
-        height: 155px;
+        height: 145px;
     }
 
     #Titulo_Block {
         width: 85%;
         height: auto;
-        max-height: 190px;
-        top: -15px;
+        max-height: 170px;
+        top: -10px;
     }
 
     #Titulo_Switch {
         width: 75%;
         height: auto;
-        max-height: 180px;
-        top: -15px;
+        max-height: 165px;
+        top: -10px;
     }
 
     #LinhaP {
-        top: 150px;
+        top: 140px;
     }
 
-    /* TEXTOS DOS JOGOS */
+    /* TEXTOS */
 
     #TextoP {
+        position: relative;
+
         width: 94%;
         max-width: none;
+
+        margin: 30px auto 25px;
         padding: 0 8px;
-        margin: 35px auto 25px;
+
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.65;
     }
 
     #TextoP section {
@@ -414,15 +447,27 @@ body.Default {
 
     #TextoP h2 {
         font-size: 21px;
+        margin-bottom: 12px;
     }
 
     #TextoP h3 {
         font-size: 17px;
+        margin-top: 22px;
+    }
+
+    #TextoP p {
+        margin: 10px 0;
     }
 
     #TextoP ul {
         padding-left: 25px;
     }
+
+    #TextoP li {
+        margin-bottom: 8px;
+    }
+
+    /* RECUOS */
 
     .Recuo {
         margin-left: 12px;
@@ -433,14 +478,14 @@ body.Default {
     .Skins {
         width: 55px;
         height: 90px;
-        margin: 20px auto 30px;
+        margin: 18px 0 28px 20px;
     }
 
     .Titulos {
-        width: 90%;
+        width: 95%;
         max-width: 350px;
         height: auto;
-        margin: 20px auto 30px;
+        margin: 18px auto 28px;
     }
 
     /* SWITCH BLOCK */
