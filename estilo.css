@@ -276,8 +276,9 @@ body.Default {
 }
 
 
+
 /* =========================================
-   AJUSTE MOBILE PARA DIFERENTES NAVEGADORES
+   MOBILE - PÁGINA INICIAL
 ========================================= */
 
 @media screen and (max-width: 900px) {
@@ -285,7 +286,7 @@ body.Default {
     #FundoP {
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
         grid-template-areas:
             "logo logo"
@@ -300,7 +301,7 @@ body.Default {
         width: 100%;
         min-width: 0;
         padding: 15px 12px 35px;
-        gap: 8px;
+        gap: 10px;
     }
 
     /* LOGO */
@@ -316,7 +317,7 @@ body.Default {
         margin: 0 auto;
     }
 
-    /* LINHA */
+    /* LINHAS */
 
     #LinhaR {
         grid-area: linha;
@@ -327,7 +328,7 @@ body.Default {
         width: 96%;
         height: 5px;
 
-        background: red;
+        background-color: red;
         border: none;
         margin: 0 auto 12px;
     }
@@ -338,7 +339,7 @@ body.Default {
 
     /* TÍTULO */
 
-    #FundoP > h2 {
+    #FundoP > .tPrincipal {
         grid-area: principal;
 
         position: static;
@@ -347,24 +348,32 @@ body.Default {
         margin: 0 0 15px;
         text-align: center;
         white-space: nowrap;
+
         font-size: clamp(15px, 4.5vw, 21px);
     }
 
-    /* LINKS DAS IMAGENS */
+    /* PRIMEIRA IMAGEM */
+
+    #FundoP > a[href="Block_Level.html"] {
+        grid-area: imagem1;
+    }
+
+    /* SEGUNDA IMAGEM */
+
+    #FundoP > a[href="Switch_Block.html"] {
+        grid-area: imagem2;
+    }
+
+    /* CAIXAS DOS LINKS */
 
     #FundoP > a {
         position: static;
         display: block;
+
         width: 100%;
+        min-width: 0;
+
         text-align: center;
-    }
-
-    #FundoP > a:nth-of-type(1) {
-        grid-area: imagem1;
-    }
-
-    #FundoP > a:nth-of-type(2) {
-        grid-area: imagem2;
     }
 
     /* IMAGENS */
@@ -381,13 +390,13 @@ body.Default {
         margin: 0 auto;
     }
 
-    /* NOMES */
+    /* NOMES DOS JOGOS */
 
-    #FundoP > a:nth-of-type(3) {
+    #FundoP > a[href*="block-level"] {
         grid-area: texto1;
     }
 
-    #FundoP > a:nth-of-type(4) {
+    #FundoP > a[href*="switch-block"] {
         grid-area: texto2;
     }
 
@@ -399,8 +408,8 @@ body.Default {
         width: 100%;
         margin: 3px auto 15px;
 
+        color: white;
         font-size: 13px;
         text-align: center;
-        color: white;
     }
 }
