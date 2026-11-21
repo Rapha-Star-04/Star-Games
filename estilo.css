@@ -75,7 +75,7 @@ img {
 .tPrincipal {
     position: absolute;
     left: 450px;
-    top: -1px;
+    top: 20px;
     color: rgb(255, 208, 0);
     font-size: 30px;
     font-family: "Pixel-Operator", monospace;
