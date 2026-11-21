@@ -397,12 +397,143 @@ body.Default {
 }
 
 /* =========================================
-   CELULARES - PÁGINAS DOS JOGOS
+   MOBILE - PÁGINA INICIAL
 ========================================= */
 
 @media screen and (max-width: 600px) {
 
-    /* CABEÇALHOS */
+    #FundoP {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        min-height: 100vh;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+            "logo logo"
+            "linha linha"
+            "principal principal"
+            "imagem1 imagem2"
+            "texto1 texto2";
+
+        justify-items: center;
+        align-items: start;
+
+        gap: 12px;
+        padding: 15px 12px 35px;
+    }
+
+    /* LOGO */
+
+    #Star_logo {
+        grid-area: logo;
+
+        position: static;
+        width: 170px;
+        height: 175px;
+
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    /* LINHA VERMELHA */
+
+    #LinhaR {
+        grid-area: linha;
+
+        display: block;
+        position: static;
+
+        width: 90%;
+        height: 4px;
+
+        background-color: red;
+        border: none;
+
+        margin: 0 auto 12px;
+    }
+
+    #LinhaD {
+        display: none;
+    }
+
+    /* TÍTULO PRINCIPAL */
+
+    #FundoP > h2 {
+        grid-area: principal;
+
+        position: static;
+        width: 100%;
+
+        margin: 0 0 15px;
+        font-size: clamp(15px, 4.5vw, 21px);
+
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* LINKS DAS IMAGENS */
+
+    #FundoP > a {
+        position: static;
+        display: block;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    #FundoP > a:nth-of-type(1) {
+        grid-area: imagem1;
+    }
+
+    #FundoP > a:nth-of-type(2) {
+        grid-area: imagem2;
+    }
+
+    /* IMAGENS DOS JOGOS */
+
+    #Titulo1,
+    #Titulo2 {
+        position: static;
+
+        display: block;
+        width: 100%;
+        max-width: 230px;
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+    /* NOMES DOS JOGOS */
+
+    #FundoP > a:nth-of-type(3) {
+        grid-area: texto1;
+    }
+
+    #FundoP > a:nth-of-type(4) {
+        grid-area: texto2;
+    }
+
+    #Texto1,
+    #Texto2 {
+        position: static;
+
+        display: block;
+        width: 100%;
+
+        margin: 0 auto 15px;
+
+        color: white;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    /* =====================================
+       PÁGINAS DOS JOGOS
+    ===================================== */
 
     .Default header {
         height: 145px;
@@ -466,8 +597,6 @@ body.Default {
     #TextoP li {
         margin-bottom: 8px;
     }
-
-    /* RECUOS */
 
     .Recuo {
         margin-left: 12px;
