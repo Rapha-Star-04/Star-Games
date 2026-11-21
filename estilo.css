@@ -275,86 +275,82 @@ body.Default {
     vertical-align: middle;
 }
 
-/* =========================================
-   TABLETS
-========================================= */
-
-@media screen and (min-width: 601px) and (max-width: 900px) {
-
-    #TextoP {
-        width: 94%;
-        max-width: 750px;
-    }
-
-    #TextoP h2 {
-        font-size: 24px;
-    }
-
-    .Skins2 {
-        width: 125px;
-        height: 120px;
-    }
-}
 
 /* =========================================
-   CELULARES - PÁGINA INICIAL
+   AJUSTE MOBILE PARA DIFERENTES NAVEGADORES
 ========================================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 
     #FundoP {
-        position: relative;
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+            "logo logo"
+            "linha linha"
+            "principal principal"
+            "imagem1 imagem2"
+            "texto1 texto2";
+
+        justify-items: center;
+        align-items: start;
+
         width: 100%;
         min-width: 0;
-        min-height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        padding: 15px 12px 40px;
-        gap: 0;
+        padding: 15px 12px 35px;
+        gap: 8px;
     }
 
     /* LOGO */
 
     #Star_logo {
-        position: relative;
-        top: auto;
-        left: auto;
+        grid-area: logo;
 
-        width: 125px;
-        height: 135px;
+        position: static;
+        width: 220px;
+        height: 210px;
 
         object-fit: contain;
-        margin-bottom: 15px;
+        margin: 0 auto;
     }
 
-    /* LINHAS */
+    /* LINHA */
 
-    #LinhaR,
+    #LinhaR {
+        grid-area: linha;
+
+        display: block;
+        position: static;
+
+        width: 96%;
+        height: 5px;
+
+        background: red;
+        border: none;
+        margin: 0 auto 12px;
+    }
+
     #LinhaD {
         display: none;
     }
 
-    /* TÍTULO PRINCIPAL */
+    /* TÍTULO */
 
     #FundoP > h2 {
-        position: relative;
-        left: auto;
-        top: auto;
+        grid-area: principal;
 
+        position: static;
         width: 100%;
-        margin: 0 0 25px;
 
-        font-family: "Pixel-Operator", monospace;
-        font-size: clamp(16px, 5vw, 21px);
-
+        margin: 0 0 15px;
         text-align: center;
-        white-space: normal;
+        white-space: nowrap;
+        font-size: clamp(15px, 4.5vw, 21px);
     }
 
-    /* LINKS E IMAGENS */
+    /* LINKS DAS IMAGENS */
 
     #FundoP > a {
         position: static;
@@ -363,24 +359,37 @@ body.Default {
         text-align: center;
     }
 
-    #FundoP > a:nth-of-type(1),
-    #FundoP > a:nth-of-type(2) {
-        width: 100%;
+    #FundoP > a:nth-of-type(1) {
+        grid-area: imagem1;
     }
+
+    #FundoP > a:nth-of-type(2) {
+        grid-area: imagem2;
+    }
+
+    /* IMAGENS */
 
     #Titulo1,
     #Titulo2 {
         position: static;
         display: block;
 
-        width: 78%;
-        max-width: 330px;
+        width: 100%;
+        max-width: 280px;
         height: auto;
 
         margin: 0 auto;
     }
 
-    /* NOMES DOS JOGOS */
+    /* NOMES */
+
+    #FundoP > a:nth-of-type(3) {
+        grid-area: texto1;
+    }
+
+    #FundoP > a:nth-of-type(4) {
+        grid-area: texto2;
+    }
 
     #Texto1,
     #Texto2 {
@@ -388,177 +397,10 @@ body.Default {
         display: block;
 
         width: 100%;
-        margin: 12px auto 35px;
+        margin: 3px auto 15px;
 
-        color: white;
-        font-size: 18px;
+        font-size: 13px;
         text-align: center;
-    }
-}
-
-/* =========================================
-   MOBILE - PÁGINA INICIAL
-========================================= */
-
-@media screen and (max-width: 600px) {
-
-    
-/* PÁGINA INICIAL MOBILE */
-
-#FundoP {
-    gap: 8px;
-}
-
-/* LOGO */
-
-#Star_logo {
-    grid-area: logo;
-    position: static;
-
-    width: 220px;
-    height: 210px;
-
-    object-fit: contain;
-    margin: 0 auto 0;
-}
-
-/* LINHA VERMELHA */
-
-#LinhaR {
-    grid-area: linha;
-    display: block;
-    position: static;
-
-    width: 96%;
-    height: 5px;
-
-    background-color: red;
-    border: none;
-
-    margin: 0 auto 12px;
-}
-
-/* IMAGENS DOS JOGOS */
-
-#Titulo1,
-#Titulo2 {
-    position: static;
-    display: block;
-
-    width: 100%;
-    max-width: 230px;
-    height: auto;
-
-    margin: 0 auto;
-}
-
-/* NOMES DOS JOGOS */
-
-#Texto1,
-#Texto2 {
-    position: static;
-    display: block;
-
-    width: 100%;
-    margin: 3px auto 15px;
-
-    color: white;
-    font-size: 13px;
-    text-align: center;
-}
-
-
-    /* =====================================
-       PÁGINAS DOS JOGOS
-    ===================================== */
-
-    .Default header {
-        height: 145px;
-    }
-
-    #Titulo_Block {
-        width: 85%;
-        height: auto;
-        max-height: 170px;
-        top: -10px;
-    }
-
-    #Titulo_Switch {
-        width: 75%;
-        height: auto;
-        max-height: 165px;
-        top: -10px;
-    }
-
-    #LinhaP {
-        top: 140px;
-    }
-
-    /* TEXTOS */
-
-    #TextoP {
-        position: relative;
-
-        width: 94%;
-        max-width: none;
-
-        margin: 30px auto 25px;
-        padding: 0 8px;
-
-        font-size: 14px;
-        line-height: 1.65;
-    }
-
-    #TextoP section {
-        margin-bottom: 35px;
-    }
-
-    #TextoP h2 {
-        font-size: 21px;
-        margin-bottom: 12px;
-    }
-
-    #TextoP h3 {
-        font-size: 17px;
-        margin-top: 22px;
-    }
-
-    #TextoP p {
-        margin: 10px 0;
-    }
-
-    #TextoP ul {
-        padding-left: 25px;
-    }
-
-    #TextoP li {
-        margin-bottom: 8px;
-    }
-
-    .Recuo {
-        margin-left: 12px;
-    }
-
-    /* BLOCK LEVEL */
-
-    .Skins {
-        width: 55px;
-        height: 90px;
-        margin: 18px 0 28px 20px;
-    }
-
-    .Titulos {
-        width: 95%;
-        max-width: 350px;
-        height: auto;
-        margin: 18px auto 28px;
-    }
-
-    /* SWITCH BLOCK */
-
-    .Skins2 {
-        width: 90px;
-        height: 90px;
-        margin: 10px 5px;
+        color: white;
     }
 }
