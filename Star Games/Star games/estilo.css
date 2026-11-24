@@ -1,0 +1,475 @@
+/* =========================================
+   FONTE E CONFIGURAÇÕES GERAIS
+========================================= */
+
+@font-face {
+    font-family: "Pixel-Operator";
+    src: url("Fontes/PixelOperator8-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================================
+   PÁGINA INICIAL - NOTEBOOK
+   Mantém as posições originais do layout desktop.
+========================================= */
+
+#FundoP {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Pixel-Operator", monospace;
+}
+
+/* O picture e o main não alteram o layout antigo no notebook. */
+#LogoWrap,
+#Jogos,
+.game-card {
+    display: contents;
+}
+
+#Star_logo {
+    position: absolute;
+    width: 120px;
+    height: 220px;
+    object-fit: contain;
+    top: -70px;
+    left: 0;
+}
+
+#LinhaR {
+    position: absolute;
+    top: 65px;
+    left: 2px;
+    width: 1360px;
+    height: 5px;
+    background-color: rgb(255, 0, 0);
+    border: 2.5px solid rgb(201, 0, 0);
+}
+
+#LinhaD {
+    position: absolute;
+    top: 72px;
+    left: 230px;
+    height: 572px;
+    width: 5px;
+    background-color: rgb(255, 0, 0);
+    border: 2.5px solid rgb(201, 0, 0);
+}
+
+.tPrincipal {
+    position: absolute;
+    left: 450px;
+    top: 20px;
+    color: rgb(255, 208, 0);
+    font-size: 30px;
+    font-family: "Pixel-Operator", monospace;
+    -webkit-text-stroke: 1.5px rgb(255, 174, 0);
+    margin: 0;
+}
+
+#Titulo1 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    top: 125px;
+    left: 305px;
+    border: 2px solid rgb(99, 99, 99);
+}
+
+#Titulo2 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    top: 125px;
+    left: 555px;
+}
+
+#Texto1,
+#Texto2 {
+    position: absolute;
+    left: 14px;
+    color: white;
+    font-family: "Pixel-Operator", monospace;
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+}
+
+#Texto1 { top: 125px; }
+#Texto2 { top: 185px; }
+
+/* =========================================
+   PÁGINAS DOS JOGOS
+========================================= */
+
+body.Default {
+    background-color: white;
+    color: black;
+    font-family: "Pixel-Operator", monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.Default * {
+    box-sizing: border-box;
+}
+
+.Default header {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+#Titulo_Block,
+#Titulo_Switch {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#Titulo_Block {
+    width: 410px;
+    height: 230px;
+}
+
+#Titulo_Switch {
+    width: 285px;
+    height: 220px;
+}
+
+#LinhaP {
+    position: absolute;
+    top: 175px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(22, 22, 22);
+    border: 2.5px solid rgb(22, 22, 22);
+    margin: 0;
+}
+
+#TextoP {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 55px auto 35px;
+    padding: 0 15px;
+    color: black;
+    font-family: "Pixel-Operator", monospace;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+#TextoP section {
+    margin-bottom: 45px;
+}
+
+#TextoP h2 {
+    color: #263A5A;
+    font-size: 26px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #52657A;
+    padding-bottom: 8px;
+}
+
+#TextoP h3 {
+    color: #52657A;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+#TextoP p {
+    margin: 12px 0;
+}
+
+#TextoP ul {
+    padding-left: 35px;
+}
+
+#TextoP li {
+    margin-bottom: 8px;
+}
+
+.Recuo {
+    margin-left: 25px;
+}
+
+/* Block Level */
+.Skins {
+    display: block;
+    width: 55px;
+    height: 100px;
+    object-fit: contain;
+    margin: 25px 0 35px 40px;
+}
+
+.Titulos {
+    display: block;
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 25px 0 35px 40px;
+}
+
+/* Switch Block */
+.Skins2 {
+    display: inline-block;
+    width: 140px;
+    height: 130px;
+    object-fit: contain;
+    margin: 20px 15px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   RESPONSIVIDADE - TABLETS E CELULARES
+========================================= */
+
+@media screen and (max-width: 900px) {
+    /* Página inicial: cabeçalho empilhado e dois cartões lado a lado. */
+    #FundoP {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 100vh;
+        padding: 18px 14px 45px;
+        overflow-x: hidden;
+    }
+
+    #CabecalhoP {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #LogoWrap {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 0;
+        margin: 0 auto 20px;
+    }
+
+    #Star_logo {
+        position: static;
+        display: block;
+        width: 250px;
+        height: auto;
+        max-width: 80vw;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    #LinhaR {
+        position: static;
+        display: block;
+        width: 100%;
+        max-width: 680px;
+        height: 7px;
+        background: red;
+        border: 0;
+        margin: 0 auto;
+    }
+
+    #LinhaD {
+        display: none;
+    }
+
+    #FundoP > .tPrincipal {
+        position: static;
+        display: block;
+        width: 100%;
+        margin: 22px 0 24px;
+        text-align: center;
+        white-space: normal;
+        color: rgb(255, 208, 0);
+        font-size: clamp(17px, 4.8vw, 23px);
+        line-height: 1.25;
+        -webkit-text-stroke: 1px rgb(255, 174, 0);
+    }
+
+    #Jogos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        justify-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .game-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        min-width: 0;
+        gap: 7px;
+        text-align: center;
+    }
+
+    #Titulo1,
+    #Titulo2 {
+        position: static;
+        display: block;
+        width: 155px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #Texto1,
+    #Texto2 {
+        position: static;
+        display: block;
+        width: 100%;
+        margin: 0;
+        color: white;
+        font-size: clamp(10px, 3.2vw, 13px);
+        line-height: 1.3;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Páginas internas */
+    #TextoP {
+        width: 94%;
+        max-width: 760px;
+        margin: 35px auto 30px;
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+    #TextoP h2 { font-size: 23px; }
+    #TextoP h3 { font-size: 19px; }
+
+    .Skins2 {
+        width: 120px;
+        height: 120px;
+        margin: 12px 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #FundoP {
+        padding: 14px 12px 35px;
+    }
+
+    #LogoWrap {
+        margin-bottom: 17px;
+    }
+
+    #Star_logo {
+        width: 235px;
+        max-width: 82vw;
+    }
+
+    #LinhaR {
+        width: 100%;
+        height: 7px;
+    }
+
+    #FundoP > .tPrincipal {
+        margin: 20px 0 21px;
+        font-size: clamp(16px, 4.6vw, 20px);
+    }
+
+    #Jogos {
+        gap: 9px;
+    }
+
+    #Titulo1,
+    #Titulo2 {
+        width: 145px;
+        max-width: 100%;
+    }
+
+    #Texto1,
+    #Texto2 {
+        font-size: clamp(9px, 3.1vw, 12px);
+    }
+
+    .Default header {
+        height: 150px;
+    }
+
+    #Titulo_Block {
+        width: 85%;
+        height: 190px;
+        top: -20px;
+    }
+
+    #Titulo_Switch {
+        width: 75%;
+        height: 185px;
+        top: -18px;
+    }
+
+    #LinhaP {
+        top: 145px;
+    }
+
+    #TextoP {
+        width: 96%;
+        margin: 30px auto 25px;
+        padding: 0 7px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    #TextoP section {
+        margin-bottom: 32px;
+    }
+
+    #TextoP h2 { font-size: 20px; }
+    #TextoP h3 { font-size: 17px; }
+    #TextoP ul { padding-left: 24px; }
+
+    .Recuo { margin-left: 10px; }
+
+    .Skins {
+        width: 48px;
+        height: 82px;
+        margin: 18px 0 25px 22px;
+    }
+
+    .Titulos {
+        width: 100%;
+        max-width: 450px;
+        margin: 18px auto 25px;
+    }
+
+    .Skins2 {
+        width: 92px;
+        height: 92px;
+        margin: 9px 4px;
+    }
+}
