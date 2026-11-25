@@ -2,33 +2,35 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css?v=5">
     <link rel="icon" type="image/png" href="Titulos/Logo_Star.png">
     <title>Star Games</title>
 </head>
-<body id="FundoP">
-    <header id="CabecalhoP">
-        <picture id="LogoWrap">
-            <source media="(max-width: 900px)" srcset="Titulos/Logo_Star_mobile.png">
-            <img id="Star_logo" src="Titulos/Logo_Star.png" alt="Logo Star Games">
-        </picture>
-        <hr id="LinhaR">
+<body class="home">
+    <header class="cabecalho-home">
+        <img class="logo" src="Titulos/Logo_Star.png" alt="Star Games">
+        <div class="linha-vermelha"></div>
+        <h1 id="Titulo1">Jogos Disponíveis:</h1>
     </header>
 
-    <hr id="LinhaD">
-    <h2 class="tPrincipal">Jogos Disponíveis:</h2>
+    <hr id="div_linha">
 
-    <main id="Jogos">
-        <a class="game-card" href="Block_Level.html" aria-label="Conhecer Block Level">
-            <img src="Titulos/sTitulo1.png" id="Titulo1" alt="Imagem do jogo Block Level">
-            <h1 id="Texto1">Block Level</h1>
-        </a>
-        <a class="game-card" href="Switch_Block.html" aria-label="Conhecer Switch Block">
-            <img src="Titulos/sTitulo2.png" id="Titulo2" alt="Imagem do jogo Switch Block">
-            <h1 id="Texto2">Switch Block</h1>
-        </a>
+    <main >
+            <a id="Jogo1" href="Block_Level.html" aria-label="Ver informações de Block Level">
+                <img src="Titulos/sTitulo1.png" alt="Imagem do jogo Block Level">
+            </a>
+
+            <a id="nome-jogo1" href="https://rapha-star-dev.itch.io/block-level">Block Level</a>
+
+
+            <a id="Jogo2" href="Switch_Block.html" aria-label="Ver informações de Switch Block">
+                <img src="Titulos/sTitulo2.png" alt="Imagem do jogo Switch Block">
+            </a>
+
+            <a id="nome-jogo2" href="https://rapha-star-dev.itch.io/switch-block">Switch Block</a>
     </main>
+
+    <h6 id="Titulo_dev">By Rapha Star</h6>
 </body>
 </html>

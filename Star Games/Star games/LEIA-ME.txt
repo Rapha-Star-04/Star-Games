@@ -1,0 +1,41 @@
+GUIA SIMPLES - STAR GAMES
+
+1) O QUE CADA ARQUIVO FAZ
+- index.html: estrutura da página inicial.
+- Block_Level.html: estrutura da página Block Level.
+- Switch_Block.html: estrutura da página Switch Block.
+- estilo.css: aparência das três páginas.
+- Titulos, Personagens e Fontes: arquivos de imagem e fonte.
+
+2) COMO O SITE SE ADAPTA AO CELULAR
+O navegador lê primeiro as regras normais do CSS. Depois, quando a tela tem até 600 pixels de largura, aplica também as regras que estão dentro de:
+@media (max-width: 600px) { ... }
+
+Exemplo:
+.logo { width: 120px; }
+@media (max-width: 600px) {
+    .logo { width: 170px; }
+}
+No computador a logo fica com 120px. No celular fica com 170px.
+
+3) COMO TESTAR UMA MUDANÇA
+- Altere uma propriedade de cada vez.
+- Salve o arquivo.
+- Atualize o navegador.
+- Confira no celular e no notebook.
+- Se não gostar, desfaça só a última mudança.
+
+4) PROPRIEDADES MAIS IMPORTANTES
+- width: largura.
+- height: altura.
+- margin: espaço do lado de fora do elemento.
+- padding: espaço dentro do elemento.
+- gap: espaço entre itens de um flex ou grid.
+- font-size: tamanho do texto.
+- display: flex: organiza itens em linha ou coluna.
+- flex-direction: row (linha) ou column (coluna).
+- justify-content: alinhamento no eixo principal.
+- align-items: alinhamento no eixo cruzado.
+
+5) ATENÇÃO
+O arquivo usa uma organização simplificada. A página inicial usa Flexbox: no computador os cartões ficam lado a lado e no celular continuam lado a lado, com largura menor. As páginas de cada jogo mantêm seu conteúdo e recebem ajustes próprios para telas estreitas.
